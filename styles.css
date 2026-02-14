@@ -1,0 +1,120 @@
+.temu-local-hidden {
+  display: none !important;
+}
+
+.temu-local-menu {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 999999;
+  padding: 10px 12px;
+  border: 1px solid #111;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111;
+  font: 600 12px/1.2 "Segoe UI", Arial, sans-serif;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  display: grid;
+  gap: 8px;
+  min-width: 190px;
+  cursor: grab;
+  user-select: none;
+}
+
+.temu-local-menu.temu-local-menu-dragging {
+  cursor: grabbing;
+}
+
+.temu-local-menu-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.temu-local-menu-label {
+  font-size: 12px;
+}
+
+.temu-local-menu-status {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  color: #555;
+}
+
+.temu-local-menu-warning {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  color: #9a3412;
+  max-width: 220px;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.temu-local-menu-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  display: inline-block;
+}
+
+.temu-local-menu-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.temu-local-menu-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e5e5e5;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.temu-local-menu-slider:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  top: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.temu-local-menu-switch input:checked + .temu-local-menu-slider {
+  background: #111;
+}
+
+.temu-local-menu-switch input:checked + .temu-local-menu-slider:before {
+  transform: translateX(16px);
+}
+
+.temu-local-highlight {
+  opacity: 0.4 !important;
+}
+
+.temu-local-removing {
+  transition: opacity 960ms ease-out, filter 960ms ease-out, transform 960ms ease-out;
+  opacity: 0 !important;
+  transform: scale(0.98);
+  filter: blur(4px);
+}
+
+.temu-local-restoring {
+  opacity: 0 !important;
+  transform: scale(0.98);
+  filter: blur(4px);
+}
+
+.temu-local-restore-anim {
+  transition: opacity 960ms ease-out, filter 960ms ease-out, transform 960ms ease-out;
+}

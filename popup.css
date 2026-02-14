@@ -1,0 +1,78 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font: 600 12px/1.2 "Segoe UI", Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+.popup {
+  min-width: 220px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.popup-title {
+  font-size: 13px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+}
+
+.switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  display: inline-block;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e5e5e5;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  top: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+input:checked + .slider {
+  background: #111;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
